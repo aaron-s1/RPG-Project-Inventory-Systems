@@ -6,24 +6,22 @@ namespace InventoryExample.UI
 {
     public class ShowHideUI : MonoBehaviour
     {
-        [SerializeField] KeyCode menuToggleKey = KeyCode.Escape;
-        [SerializeField] KeyCode iconToggleKey = KeyCode.Escape;
+        [SerializeField] KeyCode toggleKey = KeyCode.Escape;
+        [SerializeField] GameObject uiContainer = null;
 
-        [SerializeField] GameObject menuContainer = null;
-        [SerializeField] GameObject iconContainer = null;
-
-        void Start() 
+        // Start is called before the first frame update
+        void Start()
         {
-            menuContainer.SetActive(false);
+            uiContainer.SetActive(false);
         }
 
+        // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(menuToggleKey))
-                menuContainer.SetActive(!menuContainer.activeSelf);
-
-            if (Input.GetKeyDown(iconToggleKey))
-                iconContainer.SetActive(!iconContainer.activeSelf);
+            if (Input.GetKeyDown(toggleKey))
+            {
+                uiContainer.SetActive(!uiContainer.activeSelf);
+            }
         }
     }
 }
