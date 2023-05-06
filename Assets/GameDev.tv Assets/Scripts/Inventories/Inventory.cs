@@ -101,6 +101,8 @@ namespace GameDevTV.Inventories
         /// </summary>
         public void RemoveFromSlot(int slot)
         {
+            print(slot + " Removing item " + slots[slot]);
+
             slots[slot] = null;
             if (inventoryUpdated != null)
             {
@@ -118,6 +120,8 @@ namespace GameDevTV.Inventories
         /// <returns>True if the item was added anywhere in the inventory.</returns>
         public bool AddItemToSlot(int slot, InventoryItem item)
         {
+            print(slot + " Adding item " + item);
+
             if (slots[slot] != null)
             {
                 return AddToFirstEmptySlot(item); ;
